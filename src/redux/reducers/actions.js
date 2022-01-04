@@ -1,21 +1,21 @@
-import usersActionTypes from "./usersActionTypes"
+import todoActionTypes from "./todoActionTypes"
 
-const userLoadStart = () => ({
-    type: usersActionTypes.USERS_LOAD_START,
+const todoLoadStart = () => ({
+    type: todoActionTypes.TODO_LOAD_START,
 });
 
-const userLoadSuccess = (todos) => ({
-    type: usersActionTypes.USERS_LOAD_SUCCESS,
+const todoLoadSuccess = (todos) => ({
+    type: todoActionTypes.TODO_LOAD_SUCCESS,
     payload: todos,
 });
 
-const userLoadError = (errorMessage) => ({
-    type: usersActionTypes.USERS_LOAD_ERROR,
+const todoLoadError = (errorMessage) => ({
+    type: todoActionTypes.TODO_LOAD_ERROR,
     payload: errorMessage,
 });
 
 export default {
-    userLoadStart,
-    userLoadSuccess,
-    userLoadError,
+    todoLoadStart,
+    todoLoadSuccess,
+    todoLoadError,
 };

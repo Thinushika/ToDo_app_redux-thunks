@@ -1,22 +1,22 @@
 import initialStates from "./initialStates";
-import usersActionTypes from "./usersActionTypes";
+import todoActionTypes from "./todoActionTypes";
 
-const usersReducer = (state = initialStates, { type, payload }) => {
+const todoReducer = (state = initialStates, { type, payload }) => {
   switch (type) {
-    case usersActionTypes.USERS_LOAD_START:
+    case todoActionTypes.TODO_LOAD_START:
       return {
         ...state,
         isLoading: true,
         todos: null,
         errrorMessage: null,
       };
-    case usersActionTypes.USERS_LOAD_SUCCESS:
+    case todoActionTypes.TODO_LOAD_SUCCESS:
       return {
         ...state,
         isLoading: false,
         todos: payload,
       };
-    case usersActionTypes.USERS_LOAD_ERROR:
+    case todoActionTypes.TODO_LOAD_ERROR:
       return {
         ...state,
         isLoading: false,
@@ -27,4 +27,4 @@ const usersReducer = (state = initialStates, { type, payload }) => {
   }
 };
 
-export default usersReducer;
+export default todoReducer;

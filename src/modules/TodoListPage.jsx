@@ -2,23 +2,23 @@ import { Alert, Card, Col, Layout, Radio, Row, Space, Spin } from "antd";
 import { Content, Footer, Header } from "antd/lib/layout/layout";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadUserAsync } from "../redux/reducers/thunks";
+import { loadTodoAsync } from "../redux/reducers/thunks";
 
-const UsersPage = () => {
+const TodoListPage = () => {
   const dispatch = useDispatch();
   const { isLoading, todos, errrorMessage } = useSelector(
     (state) => state.todos
   );
 
   useEffect(() => {
-    dispatch(loadUserAsync());
+    dispatch(loadTodoAsync());
   }, []);
 
   return (
     <>
       <Layout>
         <Header title="ToDo app">
-          <h1 style={{ color: "#fff", textAlign: "center" }}>User Listing</h1>
+          <h1 style={{ color: "#fff", textAlign: "center" }}>To Do Listing</h1>
         </Header>
 
         <Content
@@ -59,4 +59,4 @@ const UsersPage = () => {
   );
 };
 
-export default UsersPage;
+export default TodoListPage;

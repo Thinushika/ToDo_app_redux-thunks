@@ -8,8 +8,8 @@ import apiClient from "../helper/apiClient";
 
 // export default UsersService;
 
-class UsersService {
+class TodoService {
 	getAllUsers = () => apiClient().get("todos");
 }
 
-export default new UsersService();
+export default new TodoService();

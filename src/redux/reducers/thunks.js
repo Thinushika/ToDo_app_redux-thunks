@@ -1,12 +1,12 @@
-import UsersService from "../../services/UserService";
+import TodoService from "../../services/TodoService";
 import actions from "./actions";
 
-export const loadUserAsync = () => (dispatch) => {
-  dispatch(actions.userLoadStart());
+export const loadTodoAsync = () => (dispatch) => {
+  dispatch(actions.todoLoadStart());
 
-  UsersService.getAllUsers()
-  .then((response) => dispatch(actions.userLoadSuccess(response.data)))
-  .catch((error) => dispatch(actions.userLoadError(error.message)));
+  TodoService.getAllUsers()
+  .then((response) => dispatch(actions.todoLoadSuccess(response.data)))
+  .catch((error) => dispatch(actions.todoLoadError(error.message)));
 
   
 };

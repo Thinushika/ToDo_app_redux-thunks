@@ -1,4 +1,4 @@
-import { Col, Layout, Radio, Row, Space } from "antd";
+import { Alert, Card, Col, Layout, Radio, Row, Space, Spin } from "antd";
 import { Content, Footer, Header } from "antd/lib/layout/layout";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,31 +17,43 @@ const UsersPage = () => {
   return (
     <>
       <Layout>
-        <Header>
+        <Header title="ToDo app">
           <h1 style={{ color: "#fff", textAlign: "center" }}>User Listing</h1>
         </Header>
 
-        <Content>
+        <Content
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom right, #eecda3 , #ef629f)",
+          }}
+        >
           {/* use antd loading icon */}
-          {isLoading && <h3>Loading...</h3>}
+          {isLoading && <Spin style={{ display:"grid", justifyContent:'center', textAlign: 'center'}}/>}
+
           {/* use antd alert */}
-          {errrorMessage && <h3>{errrorMessage}</h3>}
+          {errrorMessage && <Alert message={errrorMessage} type="error" />}
 
           {/* use antd data display */}
-          
-          <Row>
-            <Col span={12} offset={6}>
-            
+          <Row style={{ justifyContent: "center", display: "grid" }}>
             {todos &&
-            todos.map((todo) => 
-                <Radio key={todo.userId} >{todo.title}</Radio>
-            )}
-                
-            
-            </Col>
+              todos.map((todo) => (
+                <Card
+                  style={{
+                    marginTop: 16,
+                    width: 500,
+                    borderRadius: 6,
+                    opacity: 0.7,
+                  }}
+                  type="inner"
+                >
+                  <Radio key={todo.userId}>
+                    <Space direction="vertical">{todo.title}</Space>
+                  </Radio>
+                </Card>
+              ))}
           </Row>
         </Content>
-        <Footer>Footer</Footer>
+        <Footer>Created by TJ</Footer>
       </Layout>
     </>
   );

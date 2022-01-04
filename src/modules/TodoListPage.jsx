@@ -17,8 +17,21 @@ const TodoListPage = () => {
   return (
     <>
       <Layout>
-        <Header title="ToDo app">
-          <h1 style={{ color: "#fff", textAlign: "center" }}>To Do Listing</h1>
+        <Header title="ToDo app" 
+        style={{ 
+          backgroundColor: '#222', 
+          height: 150, 
+          display: 'grid', 
+          justifyContent: 'center' }}>
+          <h1
+            style={{
+              color: "#fff",
+              textAlign: "center",
+              paddingTop: 30
+            }}
+          >
+            To Do List
+          </h1>
         </Header>
 
         <Content
@@ -28,7 +41,15 @@ const TodoListPage = () => {
           }}
         >
           {/* use antd loading icon */}
-          {isLoading && <Spin style={{ display:"grid", justifyContent:'center', textAlign: 'center'}}/>}
+          {isLoading && (
+            <Spin
+              style={{
+                display: "grid",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            />
+          )}
 
           {/* use antd alert */}
           {errrorMessage && <Alert message={errrorMessage} type="error" />}
@@ -53,6 +74,7 @@ const TodoListPage = () => {
               ))}
           </Row>
         </Content>
+
         <Footer>Created by TJ</Footer>
       </Layout>
     </>

@@ -1,5 +1,5 @@
 export default {
     isLoading: false,
-    users: null,
+    todos: null,
     errorMessage: null,
 }

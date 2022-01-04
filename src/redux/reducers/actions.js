@@ -4,9 +4,9 @@ const userLoadStart = () => ({
     type: usersActionTypes.USERS_LOAD_START,
 });
 
-const userLoadSuccess = (users) => ({
+const userLoadSuccess = (todos) => ({
     type: usersActionTypes.USERS_LOAD_SUCCESS,
-    payload: users,
+    payload: todos,
 });
 
 const userLoadError = (errorMessage) => ({
@@ -18,4 +18,4 @@ export default {
     userLoadStart,
     userLoadSuccess,
     userLoadError,
-}
+};
